@@ -13,7 +13,7 @@ public class Main {
         x1.zeigeAttribute();
 
         int anzahlFahrzeuge = Fahrzeug.getInstanzen();
-        System.out.println("Die Anzahl der Fahrzeuge beträgt: " + anzahlFahrzeuge);
+        System.out.println("Die Anzah der Fahrzeuge beträgt: " + anzahlFahrzeuge);
     }
 }
 
