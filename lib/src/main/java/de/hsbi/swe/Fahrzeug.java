@@ -10,6 +10,7 @@ public class Fahrzeug {
         this.farbe = farbe;
         instanzen++;
     }
+
     public static int getInstanzen() {
         return instanzen;
     }
@@ -29,6 +30,7 @@ public class Fahrzeug {
     public void setFarbe(String farbe) {
         this.farbe = farbe;
     }
+
     public void zeigeAttribute() {
         System.out.println("Name: " + name);
         System.out.println("Farbe: " + farbe);
