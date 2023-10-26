@@ -1,0 +1,37 @@
+#49 Android
+
+#50 Android Activities
+- Bildschirmseite einer APP
+- Dynamische Button und statische Buttons sollten in der Regel nicht gemischt werden.
+
+
+#51 Minimalgerüst einer Activity-Klasse
+- gehört zu einer Andorid Activity
+
+#52 Activity Lifecycle
+- Eigene Implementierung müssen immer als erstes die super-Methode aufrufen
+- Sehr wichtiges Konzept
+
+#53 Findviewbyid()-Methode
+- Buttons Textfeld Hächkenelemte = view-Elemente mit einer id
+(Wenn noch nicht bekannt wird eine neue definiert)
+"@+id/button" <-- button ist hier zufaellig der Name
+- Mit der MEhtode machen ich die Elemnte "greifbar"
+- Null Pointer Fehler liegt meist and der Findviewbyid
+
+#52 Listener
+- view.onClickListener ist ein Interface
+- "android:onClikc" ist auch sehr entspannt und übersichtlicher
+
+#55 Intents
+- Aufruf einer neuen Klasse in einer Klasse
+- "Von einem GUI auf die nächste in einer App bspw."
+
+#56 Logging
+- Wenn Fehler passieren in die Logcat ehen und gucken was wirklich passiert ist
+
+# 58 Android Runtime
+- Seit Android 5 wird kompiliert (Nativer Code ist effizienter)
+
+
+

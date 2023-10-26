@@ -8,6 +8,8 @@ public class Main {
         m.starteMotor();
         m.starteMotor();
 
+        m.setSatteltasche(true);
+
         Motorrad x = new Motorrad("Yamaha YZF-R1", "rot", false, true);
         x.zeigeAttribute();
         x.starteMotor();
