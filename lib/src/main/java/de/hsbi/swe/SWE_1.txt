@@ -1,7 +1,263 @@
-#49 Android
+#4 Überblick
+- Java ist eine objektorientierte Sprache
+- automatische Speicherverwaltung
+- Java-Code wird zu Bytecode übersetzt, der von der VM zur Laufzeit interpretiert wird
+
+#5 Grundlegende Kontrollfluss-Syntax
+- do/while: Anweisung wird wiederholt bis Abbruchbedingung erfüllt ist (Bedingung wird am Ende geprüft)
+
+                            public class DoWhileClass {
+                                
+                                public void gibAus(){
+                                    int i=0;
+                                    do{
+                                        System.out.println(i);
+                                        i++;
+                                    }while(i<10);
+                                }
+                                
+                                public static void main(String[] args){
+                                    DoWhileClass dwc = new DoWhileClass();
+                                    dwc.gibAus();
+                                }
+                            } 
+                            
+- for Anweisung wird wiederholt bis Abbruchbedingung erfüllt ist (Bedingung wird am Anfang geprüft)
+
+                            public class ForClass {
+                                
+                                public void gibAus(){
+                                    for(int i=0;i<10;i++){
+                                        System.out.println(i);
+                                    }
+                                }
+                                
+                                public static void main(String[] args){
+                                    ForClass fc = new ForClass();
+                                    fc.gibAus();
+                                }
+                            }
+
+- if/else: Anweisung wird nach Prüfung der Bedingung ausgeführt
+                            import java.util.Random;
+                            public class IfClass {   
+                                public static void main(String[] args){
+                                    int i = new Random().nextInt(11);
+                                    if(i < 6) {
+                                        System.out.println("i ist kleiner 6: " + i);
+                                    } else if(i == 8) {
+                                        System.out.println("i ist gleich 8: " + i);
+                                    } else if(i == 4) {    // nicht erreichbar
+                                        System.out.println("i ist gleich 4: " + i);
+                                    } else {
+                                        System.out.println("i ist nicht kleiner 6: " + i);
+                                    }
+                                }
+                            }
+
+- switch Anweisung wird nach Prüfung der Bedingung ausgeführt (Die schönere if-Schleife)
+
+                            public class SwitchCaseClass {
+                                
+                                public static void main(String[] args){
+                                    int i=2;
+                                    
+                                    switch(i){
+                                    case 0:
+                                        System.out.println("i ist null");
+                                        break;
+                                    case 1:
+                                        System.out.println("i ist eins");
+                                        break;
+                                    case 2:
+                                        System.out.println("i ist zwei");
+                                        break;
+                                    case 3:
+                                        System.out.println("i ist drei");
+                                        break;
+                                    default:
+                                        System.out.println("i liegt nicht zwischen null und drei");
+                                        break;
+                                    }
+                                }
+                            } 
+#6 Hello World
+- Java kennt nur Klassen
+- Die Datei muss wie die öffentliche Klasse heißen (Oberklasse)
+
+#7 Bytecode und Java VM
+- Java-Quellcode (HelloWorld.java) -> Java-Compiler (javac) -> Java-Bytecode (HelloWorld.class) -> Java Virtual Machine (JVM) -> Just-in-Time-compiler (JIT)
+
+#10 Strings in Java
+- String ist eine Standard-Java-Klasse
+- Java-Klassen haben eine toString()-Methode, entweder selbst inplementiert oder geerbt
+
+#11 Klassen und Objekte
+- Alles was zu einer Klasse gehört, muss in einer Klasse stehen
+- Zu jeder Klasse gibt es einen Konstruktor, der mit dem Operator 'new' aufgerufen wird
+
+#13 Notation für Klasse in UML
+
+
+#14 Statische Methoden
+- Statische Methoden sind wie "globale Methoden" können ohne eine Instanz aufgerufen werden. 
+
+
+                            public class MWSt{
+                                            public static double berechne(double x){ 
+                                                                return x*0.19; 
+                                            }
+                            }
+
+#18 Methodenaufrufe
+- Elementare Datentypen -> call-by-value (kopieren)
+- Objekte -> call-by-reference-value (Referenz) - echtes call-by-reference würde bedeuten, dass man mit methoden auch andere Objekte verändern kann
+
+#19 Arrays
+- Java-Arrays sind Objekte und werden mit 'new' instanziiert
+- Attribut '.length' gib die Länge wieder
+
+#20 Packages
+- Java hat eine hierarchische Struktur - jede Klasse gehört zu einem Paket
+- Klassen aus einem anderen Paket können mit 'import' verwendet werden
+
+                            import java.util.Timer;
+                            import java.math.*;
+                            import de.fhbi.swe.util.*;
+
+#21 Sichtbarkeit in Java
+- Vor Attributen und Methoden kann ein Sichtbarkeitsattribut stehen, das definiert, von wo zugegriffen werden kann:
+    - private: nur innerhalb der Klassen        -> -
+    - protected: auch aus Unterklassen          -> #
+    - public: von überall her                   -> +
+    - default: nur innerhalb des selben Pakets  -> (welle)
+- Attribute sind private; Methoden sind public
+
+#22 Vererbungen
+- Vererbung ("inheritance") ist ein Konzept, um Klassen mit Hilfe von bereits bestehender Klassen zu definieren
+- Eine Unterklasse ("subclass") erbt von einer Oberklasse ("superclass"):
+    - alle nicht privaten Operationen
+    - alle nicht privaten Attributdeklatationen
+    eine Unterklasse kann dabei:
+    - geerbte Attribute und Operationen redefinieren
+    - neue Attribute und Operationen definieren
+- Durch Vererbung entstehen Klassenhierachien
+- Polymorphie = Operation/ Methode, welche auf verschiedenen Objekten aufgerufen werden kann (gibName bei Mitarbeitern, Personen, Unternehmen, Schokoriegel)
+- Zugriff auf die Oberklasse mit Schlüsselwort 'super'
+
+# 25 Statisches Binden und Dynamisches Binden
+- Der Compiler weiß beim statischen Binden wie er mit der Operation/ Mehtode umgehen muss.
+- Beim dynamischen Binden entscheidet der Compiler erst in der Laufzeit wie er mit der Methode/ Operation umgehen soll.
+
+#29 Interfaces (Schnittstellen)
+- Stellen die Methodensignatur bereit
+- Es gibt keine Attribute - Konstanten sind jedoch möglich
+
+                            public interface Buyable{
+                                    public double price();
+                            }
+                            public interface Edible{
+                                    public int calories();
+                            }
+                    
+                    public class Chocolate implements Buyable, Edible{
+
+                            @Override
+                            public double price(){
+                                    return 0.99;
+                            }
+                            @Override
+
+                            public int calories(){
+                                    return 500;
+                            } 
+                    } 
+- Interfaces ermöglichen eine spezielle Form der Mehrfachvererbung
+
+#32 Container
+- Container sind Datenstrukturen, die Objekte aufnehmen und zurückgeben können
+- Container können dabei mit beliebigen Objekten arbeiten -> Besser: typsichere Container
+    - bspw. ‘List<String> l = new ArrayList<String>();‘
+- Container Arten:
+    - Collections:
+        - Set: jedes Element nur ein mal
+        - List: mehrfach möglich
+        - Queue: Warteschlange
+    - Map: Key-Value-Paare
+- Wichtiger Containertyp ist dabei List mit folgenden Basisoperationen:
+    - int size()
+    - boolean isEmpty()
+    - boolean contains(Object element)
+    - boolean add(Element)
+    - boolean remov(Object elemenet)
+
+# Unterschied zwischen LinkedList und ArrayList
+- Die innere Stuktur (Vor- und/ oder Nachfolger) bei LinkedList bekannt, das ArrayList ist lediglich eine Aneinanderreihung von Elementen.
+- Wenn Elemente in der Liste häufig Entfernt oder Eingefügt werden -> LinkedList
+- Für alle anderen Usecases ArrayList
+
+# 35 Exceptions
+- Ausnahmen sind Objekte, die bei Fehlern erzeugt werden
+- throw löst eine Exception aus:
+    - 'throw new IllegalArgumentException("Keine negative Zahl erlaubt");'
+- catch fängt diese Exception wieder auf und behandelt diese
+
+                            try{
+                                // gefährliche Operationen
+                            }
+                            catch(<Exception class1> e1){
+                                // Fehlerbehandlung
+                            }
+                            catch(<Exception class2> e2){
+                                // Fehlerbehandlung
+                            }
+                            finally{
+                                // wird immer ausgeführt
+                            }
+-Vorteile:
+    - Fehlercode und regulärer Code wird getrennt
+    - Exceptions können hochgereicht werden
+    - Fehler können durch Vererbungshiererachie gruppiert oder typisiert werden
+
+                            readFile {
+                                try {
+                                    open the file;
+                                    determine its size;
+                                    allocate that much memory;
+                                    read the file into memory;
+                                    close the file;
+                                } catch (fileOpenFailed) {
+                                    doSomething;
+                                } catch (sizeDeterminationFailed) {
+                                    doSomething;
+                                } catch (memoryAllocationFailed) {
+                                    doSomething;
+                                } catch (readFailed) {
+                                    doSomething;
+                                } catch (fileCloseFailed) {
+                                    doSomething;
+                                }
+                            }
+
+# 42 XML
+- Extensible Markup Language
+- Beschreibung von strukturierten Informationen
+- XML-Dokumente enthalten:
+    - Elemente (definiert von tags)
+    - Attribute
+    - Text
+- Element besteht aus allem zwischen start- und end tag:
+
+                                    <book> <- start tag
+                                            <author>Douglas Adams</author>
+                                            <title>Per Anhalter durch die Galaxis
+                                        </title>
+                                            <publishDate>1979</publishDate>
+                                    </book> <- end tag
 
 #50 Android Activities
-- Bildschirmseite einer APP
+- Bildschirmseite einer App
+- Layout ist im XMl-File hinterlegt
 - Dynamische Button und statische Buttons sollten in der Regel nicht gemischt werden.
 
 
