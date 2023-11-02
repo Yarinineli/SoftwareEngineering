@@ -1,0 +1,73 @@
+# Bis 19 Von der Symstemidee zu den Anforderungen
+
+Den Allgemeinen Prozess der SOftwareerstellung mit den Begrifflichkeiten struktuirert auflisten und bennenen
+
+Anfoferung 
+spezifkation
+anwendungsfälle 
+
+# 22
+
+Kursiv = Abstrakt (Diagramm )
+Klassendiagramm = rein statisch
+    Sequenzdiagramm bringt ins Klassendiagramm die Dynamik
+        Aktivitätsdiagramm hängt da auch mit dran
+
+# 25 Anwendungsfalldiagramm /Use-Cases
+
+Neuronales Netz zum Testen einer Software bzw. der Kombination von Eingaben
+
+# 32
+
+Teilprozess beim Kfz mieten
+ - E-Mail an Kunden
+
+Wenn ein teilszenario sher wichtig ist wird das gemacht
+
+# 35 
+
+Übergeordnetes Ziel ist es, das Diagramm einfahc zu halten
+
+Git Lab Dr. Schneide Teamprojekt Ingenieursinformatik
+
+# Übung Anwendungsfalldiagramm - Geldautomat
+
+Akteure:
+- Kunde
+- Administrator
+- Mitarbeiter
+- eventuell Dienstleister
+
+Weswegen fahre ich morgens zur Bank? das ist die Frage
+
+1. Geld abheben
+2. Prepaidkarte aufladen
+3. (Sprache ändern)
+4. Kontostand einsehen
+5. Karte einziehen bei keiner Eingabe
+6. Pin Ändern
+
+
+Texuteller Anwendungsfall
+
+Anwendungsfall: Geld abheben
+Akteure: Kunde
+Kurzbeschreibung: Der Prozess, indem der Kunde Geld von seinem Bankkonto abhebt.
+Auslöser: Betätgigung der Schaltfläche Geld abheben (Button drücken ist meist nicht der Auslöser)
+Ergebnis: Erhalt von Bargeld
+Vorbedingung: Gültige Karte im Automat
+Nachbedingung: 
+Schritte:
+1. Karte einführen
+2. Betrag eingeben
+3. Kontodeckung prüfen
+4. Scheinausgabe wählen
+5. Geldscheine ausgeben
+6. Neuen Kontostand anzeigen
+7. weitere Aktivitäten zur Verfügung stellen (Handy aufladen, etc.)
+8. Vorgang beenden
+9. Karte ausgeben
+10. Karte bei keiner Eingabe (Entnahme) einziehen
+Priorität: Sehr hoch 
+
+        
